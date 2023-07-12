@@ -59,6 +59,10 @@ class RestaurantServiceTest {
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
+    //<<<<<<<<<<<<<<<<<<CALCULATING TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void calculate_total_should_return_correct_price() {
+        assertEquals(119+269, service.calculateOrderValue(restaurant.getMenu()));
+    }
 
 }

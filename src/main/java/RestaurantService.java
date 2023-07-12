@@ -36,6 +36,14 @@ public class RestaurantService {
         return restaurantToBeRemoved;
     }
 
+    public int calculateOrderValue(List<Item> items) {
+        AtomicInteger total = new AtomicInteger();
+        items.forEach(item -> {
+            total.addAndGet(item.getPrice());
+        });
+        return total.get();
+    }
+
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
